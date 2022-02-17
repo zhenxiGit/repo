@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using OpenCvSharp;
 
 namespace WindowsFormsApp1
 {
@@ -15,6 +16,13 @@ namespace WindowsFormsApp1
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var img = new Mat(new OpenCvSharp.Size(256, 256), MatType.CV_8UC3, new Scalar(35, 123, 254));
+
+            Cv2.ImShow("Image", img);
         }
     }
 }
